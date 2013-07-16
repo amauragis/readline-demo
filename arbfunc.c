@@ -51,7 +51,7 @@ int main(int argc, char** argv){
             if(strcmp(input,commands[i].name) == 0){
                 // printf("Hit command: %s\n", commands[i].name);
                 // call the function pointed to by that command entry
-                (*commands[i].func_p)();
+                (*commands[i].func_p)(NULL);
                 break;
             }
             // if we made it through the loop entirely, command wasn't found
@@ -68,12 +68,12 @@ int main(int argc, char** argv){
     
 }
 
-void functionA(){
+void functionA(void* param){
     printf("FunctionA\n");
 }
-void functionB(){
+void functionB(void* param){
     printf("FunctionB\n");
 }
-void functionC(){
+void functionC(void* param){
     printf("FunctionC\n");
 }
